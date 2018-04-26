@@ -1,3 +1,44 @@
-#container {
+#container,
+#btn {
   background-color: yellowgreen;
+  border: green solid 2px;
 }
+
+body {
+  background-color: rgb(182, 116, 243);
+}
+
+#listArea {
+  border: 3px solid rgb(211, 211, 105);
+}
+
+#items-holder {
+  border: 2px solid orangered;
+  background-color: lightskyblue;
+  width: 30em;
+  height: 40em;
+}
+
+#items {
+  border: 2px solid orangered;
+  background-color: rgb(22, 180, 35);
+  width: 30em;
+  height: 40em;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+#add-item-btn {
+  margin: 2em;
+}
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+/* 
+* {
+  border: 1px solid red !important;
+  display: grid;
+  grid-template-columns: ;
+} */
