@@ -27,6 +27,7 @@ body {
   width: 30em;
   height: 40em;
   padding-left: 30px;
+  padding-right: 30px;
   padding-top: 30px;
 }
 
@@ -55,4 +56,9 @@ h1 {
   float: right;
   clear: both;
   margin-right: 20px;
+}
+
+#greenBox div {
+  border: 2px solid blue;
+  height: 40px;
 }

@@ -9,27 +9,12 @@ const Items = itemsList.map(function(item) {
   var p = document.createElement("p");
   p.id = item.name;
   document.getElementById("greenBox").appendChild(p);
-  return (p.innerHTML = `${item.name} - $ ${item.price} ${item.type}`);
+  return (p.innerHTML = ` ${item.name} - $ ${item.price} ${item.type}`);
 });
-
-// const oneItem = itemsList.map(function(item) {
-//   return (document.getElementById("items").innerHTML = document.createElement`${
-//     item.name
-//   } - $ ${item.price} ${item.type}`);
-// });
 
 document
   .getElementById("add-item-btn")
   .addEventListener("click", selectOneItem);
-
-function checkItem() {
-  if (Items.length === 0) {
-    alert("There is nothing");
-  } else {
-    alert("there are items");
-  }
-  return;
-}
 
 function disableButton() {
   document.getElementById("add-item-btn").disabled = true;
