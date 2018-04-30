@@ -13,17 +13,16 @@ body {
 }
 
 #blueBox {
-  border: 2px solid orangered;
   background-color: lightskyblue;
-  width: 30em;
-  height: 40em;
-  padding-left: 30px;
-  padding-top: 30px;
 }
 
 #greenBox {
-  border: 2px solid orangered;
   background-color: rgb(22, 180, 35);
+}
+
+#greenBox,
+#blueBox {
+  border: 2px solid orangered;
   width: 30em;
   height: 40em;
   padding-left: 30px;
@@ -45,12 +44,6 @@ h1 {
   text-align: center;
   padding: 1em;
 }
-/* 
-* {
-  border: 1px solid red !important;
-  display: grid;
-  grid-template-columns: ;
-} */
 
 #checkbox {
   float: right;
@@ -58,7 +51,14 @@ h1 {
   margin-right: 20px;
 }
 
-#greenBox div {
-  border: 2px solid blue;
+#greenBox div,
+#blueBox div {
   height: 40px;
+}
+
+#style-me {
+  margin-right: 30px;
+  margin-left: 30px;
+  display: inline-block;
+  width: 200px;
 }
