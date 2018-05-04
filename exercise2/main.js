@@ -28,20 +28,34 @@ createList();
 document.getElementById("add-item-btn").addEventListener("click", moveitem);
 
 function moveitem() {
-  const peasCheckBox = document.getElementById("Peasbox");
-  const eggCheckBox = document.getElementById("Eggsbox");
-  const milkCheckBox = document.getElementById("Milkbox");
-  const beansCheckBox = document.getElementById("Beansbox");
+  const peasCheckBox = document.querySelector("#Peasbox");
+  const eggCheckBox = document.querySelector("#Eggsbox");
+  const milkCheckBox = document.querySelector("#Milkbox");
+  const beansCheckBox = document.querySelector("#Beansbox");
+
+  const checkedItems = [];
+
   if (peasCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Peas);
+    checkedItems.push(document.getElementById("blueBox").appendChild(Peas));
   }
   if (eggCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Eggs);
+    checkedItems.push(document.getElementById("blueBox").appendChild(Eggs));
   }
   if (milkCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Milk);
+    checkedItems.push(document.getElementById("blueBox").appendChild(Milk));
   }
   if (beansCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Beans);
+    checkedItems.push(document.getElementById("blueBox").appendChild(Beans));
+  }
+
+  const p = document.createElement("p");
+  document.getElementById("counterDisplay").appendChild(p);
+
+  if (checkedItems.length === 0) {
+    p.innerHTML = `You have not selected any item yet. Please select at least an item`;
+  } else if (checkedItems.length === 1) {
+    p.innerHTML = `You have selected ${checkedItems.length} item.`;
+  } else if (checkedItems.length > 1) {
+    p.innerHTML = `You have selected ${checkedItems.length} items.`;
   }
 }

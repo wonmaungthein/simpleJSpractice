@@ -8,8 +8,9 @@ const itemsList = [
 function createList() {
   itemsList.forEach(item => {
     const div = document.createElement("div");
+    div.className = "moveableItems";
     const span = document.createElement("span");
-    const items = `${item.name} - $ ${item.price}${item.type}`;
+    const items = `${item.name} - $ ${item.price} ${item.type}`;
     span.innerHTML = items;
     span.id = "style-me";
     const input = document.createElement("input");
@@ -17,7 +18,7 @@ function createList() {
     input.id = item.name + "box";
     div.appendChild(span);
     div.appendChild(input);
-    div.id = item.name;
+    // div.id = item.name;
     const greenBox = document.getElementById("greenBox");
     greenBox.appendChild(div);
   });
@@ -28,120 +29,45 @@ createList();
 document.getElementById("add-item-btn").addEventListener("click", moveitem);
 
 function moveitem() {
-  const peasCheckBox = document.getElementById("Peasbox");
-  const eggCheckBox = document.getElementById("Eggsbox");
-  const milkCheckBox = document.getElementById("Milkbox");
-  const beansCheckBox = document.getElementById("Beansbox");
-  if (peasCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Peas);
+  function findCheckedItems() {
+    let counter = 0;
+    const moveableitemsinGreenbox = greenBox.getElementsByClassName(
+      "moveableItems"
+    );
+
+    for (var i = 0; i < moveableitemsinGreenbox.length; i++) {
+      const checkedItems = [];
+      const p = document.createElement("p");
+      p.innerHTML = checkedItems;
+      const blueBox = document.getElementById("blueBox");
+      blueBox.appendChild(p);
+      const eachMoveableItems = moveableitemsinGreenbox[i].getElementsByTagName(
+        "span"
+      )[0].innerHTML;
+      const checkedMoveableItems = moveableitemsinGreenbox[
+        i
+      ].getElementsByTagName("input")[0].checked;
+
+      if (checkedMoveableItems) {
+        counter++;
+        p.innerHTML = eachMoveableItems;
+        checkedItems.push(p);
+      }
+    }
+
+    if (counter === 0) {
+      alert(
+        `You have not selected any items yet. Please select at least one item. `
+      );
+    } else {
+      const p = document.createElement("p");
+      document.getElementById("counterDisplay").appendChild(p);
+      if (counter === 1) {
+        p.innerHTML = `You have selected ${counter}  in Green box`;
+      } else if (counter > 1) {
+        p.innerHTML = `You have selected ${counter}  in Green box`;
+      }
+    }
   }
-  if (eggCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Eggs);
-  }
-  if (milkCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Milk);
-  }
-  if (beansCheckBox.checked) {
-    document.getElementById("blueBox").appendChild(Beans);
-  }
+  findCheckedItems();
 }
-
-// console.log(document.getElementById("greenBox"));
-// function checkedBoxSelect() {
-//   var checkbox = document.getElementById("checkbox");
-// }
-
-// function selectCheckedbox() {
-//   var checkbox = document.getElementById("checkbox");
-// document.getElementById('blueBox')
-//   return;
-//   console.log(checkedBox);
-// }
-
-// console.log(selectCheckedbox());
-// function myFunction() {
-//   var x = document.getElementById("myCheck").checked;
-//   document.getElementById("demo").innerHTML = x;
-// }
-
-// This is main important function
-
-// function myFunction() {
-//   var selectedItems = document.getElementById("item.name");
-//   var selectedCheckbox = document.getElementById("checkbox");
-//   if (selectedCheckbox.checked) {
-//     document.getElementById("blueBox").appendChild(selectedCheckbox);
-//   }
-// }
-
-// var selectedItemsArray = [];
-// function selectedItems() {
-//   var x = document.getElementById("checkbox").checked;
-//   selectedItemsArray.push(x);
-//   return;
-// }
-
-// const checkBoxArray = newAray.map(function(item) {
-//   const p = document.createElement("p");
-//   p.innerHTML = item;
-//   document.getElementById("greenBox").appendChild(p);
-// });
-
-// const Items = itemsList.map(function(item) {
-//   var p = document.createElement("p");
-//   p.id = item.name;
-//   document.getElementById("greenBox").appendChild(p);
-//   return (p.innerHTML = ` ${item.name} - $ ${item.price} ${item.type}`);
-// });
-
-// var uncheckedItems = [];
-// var ready = [];
-
-// if (peasCheckBox.checked === false) {
-//   uncheckedItems.push("i");
-// } else
-// if (eggCheckBox.checked === false) {
-//   uncheckedItems.push("i");
-// } else
-
-// if (milkCheckBox.checked === false) {
-//   uncheckedItems.push("i");
-// } else
-// if (beansCheckBox.checked === false) {
-//   uncheckedItems.push("i");
-// } else
-
-// if (uncheckedItems.length > 0) {
-//   alert("Please click one item");
-// } else {
-//   return ready;
-// }
-
-// function checkItem() {
-//   if (peasCheckBox.checked === false) {
-//     alert("Please select at least one item");
-//   }
-//   return;
-// }
-
-// function disableButton() {
-//   document.getElementById("add-item-btn").disabled = true;
-// }
-
-// function disableFireWorks() {
-//   const image = document.getElementById("image");
-//   image.disabled = true;
-// }
-
-// function selectOneItem() {
-//   document.getElementById("item.name");
-//   const firstItem = document.getElementsByTagName("p")[0];
-//   document.getElementById("blueBox").appendChild(firstItem);
-//   if (
-//     document.getElementById("greenBox").getElementsByTagName("p").length <= 0
-//   ) {
-//     alert("This is the last item to move to the other side");
-//     disableButton();
-//     // disableFireWorks();
-//   }
-// }

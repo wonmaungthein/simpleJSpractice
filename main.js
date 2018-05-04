@@ -6,7 +6,7 @@ const itemsList = [
 ];
 
 const Items = itemsList.map(function(item) {
-  var p = document.createElement("p");
+  const p = document.createElement("p");
   p.id = item.name;
   document.getElementById("greenBox").appendChild(p);
   return (p.innerHTML = ` ${item.name} - $ ${item.price} ${item.type}`);
