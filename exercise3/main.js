@@ -49,9 +49,11 @@ function moveitem() {
       ].getElementsByTagName("input")[0].checked;
 
       if (checkedMoveableItems) {
+        const removeThisItem = moveableitemsinGreenbox[i];
         counter++;
         p.innerHTML = eachMoveableItems;
         checkedItems.push(p);
+        removeThisItem.parentNode.removeChild(removeThisItem);
       }
     }
 

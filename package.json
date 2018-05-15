@@ -1,0 +1,19 @@
+{
+  "name": "simplejspractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonmaungthein/simpleJSpractice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonmaungthein/simpleJSpractice/issues"
+  },
+  "homepage": "https://github.com/wonmaungthein/simpleJSpractice#readme"
+}
