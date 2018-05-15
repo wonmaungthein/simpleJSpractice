@@ -1,3 +1,5 @@
+/*eslint-env node, mocha */
+
 const itemsList = [
   { name: "Peas", price: 0.95, type: "per bag" },
   { name: "Eggs", price: 2.1, type: "per dozen" },
